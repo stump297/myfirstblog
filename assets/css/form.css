@@ -7,13 +7,40 @@ header {
   }
   
   section {
-    height: 400px;
-    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+    width: 90%;
     margin: 30px auto;
     border: 10px solid black;
   }
 
-  .form {
+ .card {
+  width: 45%;
+  height: 45%;
+  
+ }
+
+#blog_pic {
+  height: 500;
+  width: auto;
+ }
+
+ .field {
+  height: 30px;
+  width: auto;
+ }
+
+ #button {
+  height: 50px;
+  width: auto;
+
+ }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: hsl(0, 0%, 100%);
     border-radius: 5px;
     border-width: 1px;
@@ -22,5 +49,6 @@ header {
     font-size: 18px;
     margin: 0 auto;
     max-width: 800px;
+    height: 525px;
     padding: 30px 40px;
   }
