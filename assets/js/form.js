@@ -17,5 +17,6 @@ const blogInfo = {
     content: contentValue
 }
       localStorage.setItem('blog', JSON.stringify(blogInfo));
+      location.href = "./blog.html";
 });
 
