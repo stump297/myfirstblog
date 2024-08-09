@@ -20,8 +20,11 @@ The application also includes a lightmode/dark mode toggle button and stores blo
 ## Project github 
 https://github.com/stump297/myfirstblog
 
+## Deployment Website
+https://stump297.github.io/myfirstblog/
+
 ## Usage
-1. open index.html
+1. Navigate to https://stump297.github.io/myfirstblog/
 2. fill out the form
 3. submit the form
 4. view all the blog posts on the next page
