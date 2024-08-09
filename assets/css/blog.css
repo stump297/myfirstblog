@@ -11,7 +11,18 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.post {
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #333;
+}
+
+.post-container {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -21,7 +32,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.post:hover {
+.post-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -42,4 +53,14 @@
     margin-top: 10px;
     font-weight: bold;
     color: #333;
+}
+
+/* added the light mode and dark mode to this css file to make the button work */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+body.dark-mode {
+    background-color: black;
+    color: white;
 }
