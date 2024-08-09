@@ -1,12 +1,22 @@
-const blogPosts = JSONq.parse(localStorage.getItem('blog'));
-const blogList = document.querySelector('ul');
+function displayPosts() {
+  const postsList = document.getElementById("blog");
+  postsList.innerHTML = "";
+  const blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+  blogPosts.forEach((post) => {
+    const postElement = document.createElement("div");
+    postElement.innerHTML = `<h2>${post.title}</h2><p>${post.content}</p><p><strong>Author:</strong> ${post.username}</p>`;
+    postsList.appendChild(postElement);
+  });
+}
 
-blogPosts.forEach(blogPosts => {
-    const blogs = document.createElement('li')
-    blogs.textContent = (blogPosts)
-    blogList.appendChild(blogs);
-
+window.addEventListener("load", function () {
+  if (document.getElementById("posts-page").style.display === "block") {
+    displayPosts();
+  }
 });
 
-console.log (blogList);
-console.log (blogPosts);
+//   adding the light mode/dark mode function
+document.getElementById("toggle-mode").addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("light-mode");
+});

@@ -1,22 +1,24 @@
-const username = document.getElementById('User');
-const title = document.getElementById('Title');
-const content = document.getElementById('Content');
-const form = document.getElementById('form');
-
-
-form.addEventListener('submit', (event) => {
+//crating an event listener to grab the content from the form fields.
+document
+  .getElementById("blog-form")
+  .addEventListener("submit", function (event) {
     event.preventDefault();
-    const usernameValue = username.value;
-    const titleValue = title.value;
-    const contentValue = content.value;
+    const username = document.getElementById("username").value;
+    const title = document.getElementById("title").value;
+    const content = document.getElementById("content").value;
 
+    // adding the error message
+    if (!username || !title || !content) {
+      document.getElementById("message").innerText =
+        "Please complete the form.";
+      return;
+    }
 
-const blogInfo = {
-    username: usernameValue,
-    title: titleValue,
-    content: contentValue
-}
-      localStorage.setItem('blog', JSON.stringify(blogInfo));
-      location.href = "./blog.html";
-});
+    // adding to local storage
+    const blogPost = { username, title, content };
+    let blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+    blogPosts.push(blogPost);
+    localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
 
+    window.location.href = "blog.html";
+  });
